@@ -14,8 +14,8 @@
 
  */
 
-let measureFrom = prompt("Vilket mått vill du konvertera från? (ml, cl, dl, l)").toLowerCase()
-let measureTo = prompt("Vilket mått vill du konvertera till? (ml, cl, dl, l)").toLowerCase()
+let measureFrom = prompt("Vilken enhet vill du konvertera från? (ml, cl, dl, l)").toLowerCase()
+let measureTo = prompt("Vilken enhet vill du konvertera till? (ml, cl, dl, l)").toLowerCase()
 let measureValue = prompt(`Hur många ${measureFrom} vill du konvertera?`)
     
     
@@ -56,7 +56,7 @@ let result = converter()
             return measureValue / (value1/value2)
         }
         else if(value1 < value2){
-            return measureValue / (value1/value2)
+            return measureValue * (value2/value1)
         }
         else if(value1 === value2){
             return measureValue
