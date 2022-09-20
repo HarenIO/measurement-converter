@@ -9,7 +9,7 @@
         Steg 2: Ta reda på measureFrom & measureTo värdena 
         Steg 3: Spara värdena i variabeler
         Steg 4: Stoppa in värdena i matte formeln
-        Steg 5: Kör formel funktionen & printa resultat
+        Steg 5: Printa resultat
  */
 
 let measureFrom = prompt("Vilken enhet vill du konvertera från? (ml, cl, dl, l)").toLowerCase()
@@ -60,7 +60,5 @@ const result = converter()
         }
     }
 
-//Steg 5: Kör formel funktionen & printa resultat
-converter()
+//Steg 5: Printa resultat
 alert(`${measureAmount}${measureFrom} är ${result}${measureTo}`)
-
