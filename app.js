@@ -6,7 +6,7 @@
 
     Logiken:
         Steg 1: Sätt värde på enheterna
-        Steg 2: Ta reda på convertFrom & convertTo värdena 
+        Steg 2: Konvertera enheterna till enhets-värdet
         Steg 3: Spara värdena i variabeler
         Steg 4: Stoppa in värdena i matte formeln
         Steg 5: Printa resultat
@@ -24,7 +24,7 @@ let convertAmount = prompt(`Hur många ${convertFrom} vill du konvertera?`)
         l : 1
     }
 
-//Steg 2: Ta reda på convertFrom & convertTo värdena
+//Steg 2: Konvertera enheterna till enhets-värdet
 function convert(){
     let fromToValues = [];
     for(let objValue in convertionValues){
