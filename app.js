@@ -1,40 +1,40 @@
 
 /*  
     Matematiken:
-        * Om värdet av measureFrom är större än värdet i measureTo = measureAmount / (measureFrom-värdet/measureTo-värdet)
-        * Om värdet av measureFrom är mindre än värdet i measureTo = measureAmount * (measureTo-värdet/measureFrom-värdet)
+        * Om värdet av convertFrom är större än värdet i convertTo = convertAmount / (convertFrom-värdet/convertTo-värdet)
+        * Om värdet av convertFrom är mindre än värdet i convertTo = convertAmount * (convertTo-värdet/convertFrom-värdet)
 
     Logiken:
         Steg 1: Sätt värde på enheterna
-        Steg 2: Ta reda på measureFrom & measureTo värdena 
+        Steg 2: Ta reda på convertFrom & convertTo värdena 
         Steg 3: Spara värdena i variabeler
         Steg 4: Stoppa in värdena i matte formeln
         Steg 5: Printa resultat
  */
 
-let measureFrom = prompt("Vilken enhet vill du konvertera från? (ml, cl, dl, l)").toLowerCase()
-let measureTo = prompt("Vilken enhet vill du konvertera till? (ml, cl, dl, l)").toLowerCase()
-let measureAmount = prompt(`Hur många ${measureFrom} vill du konvertera?`)
+let convertFrom = prompt("Vilken enhet vill du konvertera från? (ml, cl, dl, l)").toLowerCase()
+let convertTo = prompt("Vilken enhet vill du konvertera till? (ml, cl, dl, l)").toLowerCase()
+let convertAmount = prompt(`Hur många ${convertFrom} vill du konvertera?`)
     
 //Steg 1: Sätt värde på enheterna
-    const measurements = {
+    const convertionValues = {
         ml: 1000,
         cl: 100,
         dl: 10,
         l : 1
     }
 
-//Steg 2: Ta reda på measureFrom & measureTo värdena
-function measureValues(){
+//Steg 2: Ta reda på convertFrom & convertTo värdena
+function convert(){
     let fromToValues = [];
-    for(let objValue in measurements){
-        if(measureFrom == objValue){
-            fromToValues.push(measurements[objValue])
+    for(let objValue in convertionValues){
+        if(convertFrom == objValue){
+            fromToValues.push(convertionValues[objValue])
         }
     }
-    for(let objValue in measurements){
-        if(measureTo == objValue){
-            fromToValues.push(measurements[objValue])
+    for(let objValue in convertionValues){
+        if(convertTo == objValue){
+            fromToValues.push(convertionValues[objValue])
         }
     }
     return fromToValues
@@ -42,23 +42,23 @@ function measureValues(){
 
 
 //Steg 3: Spara värdena i variabeler
-const measureFromValue = measureValues()[0]
-const measureToValue = measureValues()[1]
-const result = converter()
+const convertFromValue = convert()[0]
+const convertToValue = convert()[1]
+const result = calculate()
 
 
 //Steg 4: Stoppa in värdena i matte formeln
-    function converter(){
-        if(measureFromValue > measureToValue){
-            return measureAmount / (measureFromValue/measureToValue)
+    function calculate(){
+        if(convertFromValue > convertToValue){
+            return convertAmount / (convertFromValue/convertToValue)
         }
-        else if(measureFromValue < measureToValue){
-            return measureAmount * (measureToValue/measureFromValue)
+        else if(convertFromValue < convertToValue){
+            return convertAmount * (convertToValue/convertFromValue)
         }
-        else if(measureFromValue === measureToValue){
-            return measureAmount
+        else if(convertFromValue === convertToValue){
+            return convertAmount
         }
     }
 
 //Steg 5: Printa resultat
-alert(`${measureAmount}${measureFrom} är ${result}${measureTo}`)
+alert(`${convertAmount}${convertFrom} är ${result}${convertTo}`)
